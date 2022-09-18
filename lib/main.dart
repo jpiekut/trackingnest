@@ -15,24 +15,33 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('TrackingNest'),
         ),
+        floatingActionButton: FloatingActionButton.extended(
+          label: Text('Add Subscription'),
+          onPressed: () {},
+        ),
         body: const Center(
-          child: RandomWords(),
+          child: Subscriptions(),
         ),
       ),
     );
   }
 }
 
-class RandomWords extends StatefulWidget {
-  const RandomWords({Key? key}) : super(key: key);
+class Subscriptions extends StatefulWidget {
+  const Subscriptions({Key? key}) : super(key: key);
   @override
-  State<RandomWords> createState() => _RandomWordsState();
+  State<Subscriptions> createState() => _Subscriptions();
 }
 
-class _RandomWordsState extends State<RandomWords> {
+class _Subscriptions extends State<Subscriptions> {
   @override
   Widget build(BuildContext context) {
-    final _suggestions = <String>["Netflix", "Prime"];
+    final _suggestions = <String>[
+      "Netflix",
+      "Prime",
+      "YouTube Premium",
+      "Disney+"
+    ];
     final _biggerFont = const TextStyle(fontSize: 18);
 
     return ListView.builder(
